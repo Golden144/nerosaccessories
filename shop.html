@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Nero's Phone Accessories — Shop</title>
+  <link rel="stylesheet" href="style/style.css"/>
+  <script defer src="js/script.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-row">
+      <div class="brand">
+        <a href="index.html" class="logo">NERO's Phone Accessories</a>
+      </div>
+      <nav class="main-nav" id="mainNavShop">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html" class="active">Shop</a></li>
+          <li><a href="about.html">About & Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="#" class="open-cart">Cart</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger" id="hamburgerShop" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <section class="hero shop-hero">
+    <div class="container">
+      <h1>Shop the Collection</h1>
+      <p>Browse categories or search for the accessories you need.</p>
+      <div class="filters">
+        <select id="filterCategory" onchange="filterCategory()">
+          <option value="all">All categories</option>
+          <option value="cases">Phone Cases</option>
+          <option value="chargers">Chargers</option>
+          <option value="headsets">Headsets</option>
+          <option value="earbuds">Earbuds</option>
+          <option value="Smartwatches">Smartwatches</option>
+          <option value="speakers">Portable Speakers</option>
+          <option value="ringlights">Ring Lights</option>
+          <option value="tripods">Tripod Lights</option>
+          <option value="leds">LED Lights</option>
+          <option value="miniphones">Mini Phones</option>
+          <option value="minifans">Mini Fans</option>
+          <option value="wallpapers">Wallpapers</option>
+          <option value="powerbanks">Power Banks</option>
+        </select>
+        <input id="searchBox" type="search" placeholder="Search products..." oninput="applySearch()" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Products</h2>
+      <div class="grid products-grid" id="productsGrid">
+        <!-- Example product card with both actions -->
+        <article class="card product-card" data-category="powerbanks">
+          <img src="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761746242/31a41730130a9f1510fc6e9254811eda_jftq9p.webp" alt="Power Bank 10000">
+          <h3>Power Bank 10,000 mAh</h3>
+          <p class="muted">Compact 10,000mAh power bank, fast charge friendly.</p>
+          <p class="price">₦12,500</p>
+          <div class="card-actions">
+            <button class="btn small" data-add-to-cart data-id="pb-10000" data-name="Power Bank 10000mAh" 
+            data-price="12500" data-image="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761746242/31a41730130a9f1510fc6e9254811eda_jftq9p.webp">
+            Add to Cart</button>
+            <button class="btn small outline" data-order-now data-id="pb-10000" data-name="Power Bank 10000mAh" 
+            data-price="12500" data-qty="1">Order Now</button>
+          </div>
+        </article>
+
+        <!-- Repeat for 20k and 30k -->
+        <article class="card product-card" data-category="powerbanks">
+          <img src="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761740460/e9cf6fde76cc3e5408f2e072250a59a8_aiuwsy.webp" alt="Power Bank 20000">
+          <h3>Power Bank 20,000 mAh</h3>
+          <p class="muted">High capacity 20,000mAh, perfect for travel.</p>
+          <p class="price">₦16,500</p>
+          <div class="card-actions">
+            <button class="btn small" data-add-to-cart data-id="pb-20000" data-name="Power Bank 20000mAh" data-price="16500"
+             data-image="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761740460/e9cf6fde76cc3e5408f2e072250a59a8_aiuwsy.webp">Add to Cart</button>
+            <button class="btn small outline" data-order-now data-id="pb-20000" data-name="Power Bank 20000mAh" data-price="16500"
+             data-qty="1">Order Now</button>
+          </div>
+        </article>
+
+        <article class="card product-card" data-category="powerbanks">
+          <img src="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761746237/31baf772d8bb4adb874cd9d7c7043676_ruwugm.webp" alt="Power Bank 30000">
+          <h3>Power Bank 30,000 mAh</h3>
+          <p class="muted">Ultra high capacity 30,000mAh, heavy-duty power for long trips.</p>
+          <p class="price">₦28,500</p>
+          <div class="card-actions">
+            <button class="btn small" data-add-to-cart data-id="pb-30000" data-name="Power Bank 30000mAh" data-price="28500" 
+            data-image="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761746237/31baf772d8bb4adb874cd9d7c7043676_ruwugm.webp">Add to Cart</button>
+            <button class="btn small outline" data-order-now data-id="pb-30000" data-name="Power Bank 30000mAh" data-price="28500" 
+            data-qty="1">Order Now</button>
+          </div>
+        </article>
+
+        <!-- phone cases -->
+        <article class="card product-card" data-category="cases">
+          <img src="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761720066/IMG_20251024_111613_rqb9zr.jpg" alt="Phone Case">
+          <h3>Durable Phone Case</h3>
+          <p class="muted">Shock-absorbent case with sleek design.</p>
+          <p class="price">₦4,000</p>
+          <div class="card-actions">
+            <button class="btn small" data-add-to-cart data-id="pc-01" data-name="Durable Phone Case" 
+            data-price="4000" data-image="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761720066/IMG_20251024_111613_rqb9zr.jpg">
+            Add to Cart</button>
+            <button class="btn small outline" data-order-now data-id="pc-01" data-name="Durable Phone Case" 
+            data-price="4000" data-qty="1">Order Now</button>
+          </div>
+        </article>
+
+        <article class="card product-card" data-category="cases">
+          <img src="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761720176/IMG-20251024-WA0050_djkymr.jpg" alt="Phone Case">
+          <h3>Colorful Phone Case</h3>
+          <p class="muted">Vibrant design to personalize your phone.</p>
+          <p class="price">₦4,000</p>
+          <div class="card-actions">
+            <button class="btn small" data-add-to-cart data-id="pc-02" data-name="Colorful Phone Case" 
+            data-price="4000" data-image="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761720176/IMG-20251024-WA0050_djkymr.jpg">
+            Add to Cart</button>
+            <button class="btn small outline" data-order-now data-id="pc-02" data-name="Colorful Phone Case" 
+            data-price="4000" data-qty="1">Order Now</button>
+          </div>
+        </article>
+
+        <article class="card product-card" data-category="cases">
+          <img src="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761720174/IMG-20251024-WA0046_krndek.jpg" alt="Phone Case">
+          <h3>Transparent Phone Case</h3>
+          <p class="muted">Clear case to showcase your phone's design.</p>
+          <p class="price">₦3,000</p>
+          <div class="card-actions">
+            <button class="btn small" data-add-to-cart data-id="pc-03" data-name="Transparent Phone Case" 
+            data-price="2800" data-image="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761720174/IMG-20251024-WA0046_krndek.jpg">
+            Add to Cart</button>
+            <button class="btn small outline" data-order-now data-id="pc-03" data-name="Transparent Phone Case" 
+            data-price="3000" data-qty="1">Order Now</button>
+          </div>
+        </article>
+
+        <article class="card product-card" data-category="cases">
+          <img src="images\IMG-20251024-WA0051.jpg" alt="Phone Case">
+          <h3>Rugged Phone Case</h3>
+          <p class="muted">Heavy-duty protection for extreme conditions.</p>
+          <p class="price">₦4,000</p>
+          <div class="card-actions">
+            <button class="btn small" data-add-to-cart data-id="pc-04" data-name="Rugged Phone Case" 
+            data-price="4000" data-image="images\IMG-20251024-WA0051.jpg">
+            Add to Cart</button>
+            <button class="btn small outline" data-order-now data-id="pc-04" data-name="Rugged Phone Case" 
+            data-price="4000" data-qty="1">Order Now</button>
+          </div>
+        </article>
+
+        <!-- smartwatches -->
+        <article class="card product-card" data-category="Smartwatches">
+          <img src="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761720183/IMG-20251024-WA0070_tagmbq.jpg" alt="Smartwatch">
+          <h3>Fitness Smartwatch with 7(seven) straps,rechargeable mini Fan & earbud</h3>
+          <p class="muted">Track your health and stay connected on the go.</p>
+          <p class="price">₦31,000</p>
+          <div class="card-actions">
+            <button class="btn small" data-add-to-cart data-id="sw-01" data-name="Fitness Smartwatch" 
+            data-price="31000" data-image="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761720183/IMG-20251024-WA0070_tagmbq.jpg">
+            Add to Cart</button>
+            <button class="btn small outline" data-order-now data-id="sw-01" data-name="Fitness Smartwatch" 
+            data-price="31000" data-qty="1">Order Now</button>
+          </div>
+        </article>
+
+        <article class="card product-card" data-category="Smartwatches">
+          <img src="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761720183/IMG-20251024-WA0072_morsgn.jpg" alt="Smartwatch">
+          <h3>Classic Smartwatch with earbud & 2(two) straps </h3>
+          <p class="muted">Elegant design with essential smartwatch features.</p>
+          <p class="price">₦20,000</p>
+          <div class="card-actions">
+            <button class="btn small" data-add-to-cart data-id="sw-02" data-name="Classic Smartwatch with earbud & 2(two) straps" 
+            data-price="20000" data-image="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761720183/IMG-20251024-WA0072_morsgn.jpg">
+            Add to Cart</button>
+            <button class="btn small outline" data-order-now data-id="sw-02" data-name="Classic Smartwatch with earbud & 2(two) straps" 
+            data-price="20000" data-qty="1">Order Now</button>
+          </div>
+        </article>
+
+        <article class="card product-card" data-category="smartwatches">
+          <img src="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761720183/IMG-20251024-WA0069_vzrauf.jpg" alt="Smartwatch">
+          <h3>Sport Smartwatch with 10(Ten) colorful straps & Earbud</h3>
+          <p class="muted">Rugged design with advanced fitness tracking.</p>
+          <p class="price">₦28,OOO</p>
+          <div class="card-actions">
+            <button class="btn small" data-add-to-cart data-id="sw-03" data-name="Sport Smartwatch" 
+            data-price="28000" data-image="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761720183/IMG-20251024-WA0069_vzrauf.jpg">
+            Add to Cart</button>
+            <button class="btn small outline" data-order-now data-id="sw-03" data-name="Sport Smartwatch" 
+            data-price="28000" data-qty="1">Order Now</button>
+          </div>
+        </article>
+
+
+         <!-- chargers -->
+        <article class="card product-card" data-category="chargers">
+          <img src="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761740460/edb4e8a70f3069d4f93a084f68f75002_tkk9wn.webp" 
+          alt="Oraimo charger">
+          <h3>oraimo charger</h3>
+          <p class="muted">Lightening fast charging charger.</p>
+          <p class="price">₦4,000</p>
+          <div class="card-actions">
+            <button class="btn small" data-add-to-cart data-id="oraimo charger" 
+            data-name="oraimo charger" data-price="4000" 
+            data-image="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761740460/edb4e8a70f3069d4f93a084f68f75002_tkk9wn.webp">
+            Add to Cart</button>
+            <button class="btn small outline" data-order-now data-id="oraimo charger" 
+            data-name="Oraimo charger" data-price="4000" data-qty="1">
+            Order Now</button>
+          </div>
+        </article>
+
+        <article class="card product-card" data-category="chargers">
+          <img src="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761740461/3befb186deb76d9df3a33a275a12de18_ryupos.webp" 
+          alt="SHPlus charger">
+          <h3>SHPlus charger</h3>
+          <p class="muted">Lightening fast charging charger.</p>
+          <p class="price">₦6,500</p>
+          <div class="card-actions">
+            <button class="btn small" data-add-to-cart data-id="SHPlus charger" 
+            data-name="SHPlus charger" data-price="6500" 
+            data-image="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761740461/3befb186deb76d9df3a33a275a12de18_ryupos.webp">
+            Add to Cart</button>
+            <button class="btn small outline" data-order-now data-id="SHPlus charger" 
+            data-name="Oraimo charger" data-price="6500" data-qty="1">
+            Order Now</button>
+          </div>
+        </article>
+
+        <article class="card product-card" data-category="chargers">
+          <img src="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761740461/0f06ec80ea781815fe109d933a27f2bf_aqdxhv.webp" alt="infinix charger">
+          <h3>Infinix charger</h3>
+          <p class="muted">Lightening fast charging charger.</p>
+          <p class="price">₦6,500</p>
+          <div class="card-actions">
+            <button class="btn small" data-add-to-cart data-id="Infinix charger" 
+            data-name="Infinix charger" data-price="6500" 
+            data-image="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761740461/0f06ec80ea781815fe109d933a27f2bf_aqdxhv.webp">
+            Add to Cart</button>
+            <button class="btn small outline" data-order-now data-id="Infinix charger" 
+            data-name="Infinix charger" data-price="6500" data-qty="1">
+            Order Now</button>
+          </div>
+        </article>
+
+        <article class="card product-card" data-category="chargers">
+          <img src="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761740462/218b7a190d9ff38b952790b231a19e9d_ffj43s.webp" 
+          alt="Tecno charger">
+          <h3>Tecno charger</h3>
+          <p class="muted">Lightening fast charging charger.</p>
+          <p class="price">₦5,000</p>
+          <div class="card-actions">
+            <button class="btn small" data-add-to-cart data-id="Tecno charger" 
+            data-name="Tecno charger" data-price="5000" 
+            data-image="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761740462/218b7a190d9ff38b952790b231a19e9d_ffj43s.webp">
+            Add to Cart</button>
+            <button class="btn small outline" data-order-now data-id="Tecno charger" 
+            data-name="Techno charger" data-price="5000" data-qty="1">
+            Order Now</button>
+          </div>
+        </article>
+
+        <article class="card product-card" data-category="chargers">
+          <img src="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761740461/efe79b708122ea76ccd4c240d1dc94e3_sbgue4.webp" 
+          alt="Samsung charger">
+          <h3>Samsung charger</h3>
+          <p class="muted">Lightening fast charging charger.</p>
+          <p class="price">₦6,500</p>
+          <div class="card-actions">
+            <button class="btn small" data-add-to-cart data-id="Samsung charger" 
+            data-name="Samsung charger" data-price="6500" 
+            data-image="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761740461/efe79b708122ea76ccd4c240d1dc94e3_sbgue4.webp">
+            Add to Cart</button>
+            <button class="btn small outline" data-order-now data-id="Samsung charger" 
+            data-name="Samsung charger" data-price="6500" data-qty="1">
+            Order Now</button>
+          </div>
+        </article>
+
+        <article class="card product-card" data-category="chargers">
+          <img src="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761740461/5bb3554387222511a16533ba5ba6af21_oc1ik4.webp" 
+          alt="iPhone charger">
+          <h3>iPhone charger</h3>
+          <p class="muted">Lightening fast charging charger.</p>
+          <p class="price">₦8,000</p>
+          <div class="card-actions">
+            <button class="btn small" data-add-to-cart data-id="iPhone charger" 
+            data-name="iPhone charger" data-price="8000" 
+            data-image="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761740461/5bb3554387222511a16533ba5ba6af21_oc1ik4.webp">
+            Add to Cart</button>
+            <button class="btn small outline" data-order-now data-id="iPhone charger" 
+            data-name="iPhone charger" data-price="8000" data-qty="1">
+            Order Now</button>
+          </div>
+        </article>
+
+        <!-- headsets -->
+        <article class="card product-card" data-category="headsets">
+          <img src="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761720078/IMG_20251024_114109_ocbc7k.jpg" alt="Wireless Headset">
+          <h3>Bluetooth Wireless Headset</h3>
+          <p class="muted">Comfortable fit, clear sound quality.</p>
+          <p class="price">₦7,500</p>
+          <div class="card-actions">
+            <button class="btn small" data-add-to-cart data-id="hs-01" data-name="Bluetooth Wireless Headset" 
+            data-price="7500" data-image="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761720078/IMG_20251024_114109_ocbc7k.jpg">Add to Cart</button>
+            <button class="btn small outline" data-order-now data-id="hs-01" data-name="Bluetooth Wireless Headset" 
+            data-price="7500" data-qty="1">Order Now</button>
+          </div>
+        </article>
+
+        <article class="card product-card" data-category="headsets">
+          <img src="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761720082/IMG_20251024_113946_jka5ot.jpg" alt="Wireless Headset">
+          <h3>Over-Ear Wireless Headset</h3>
+          <p class="muted">Noise-cancelling, long battery life.</p>
+          <p class="price">₦6,500</p>
+          <div class="card-actions">
+            <button class="btn small" data-add-to-cart data-id="hs-02" data-name="Over-Ear Wireless Headset" 
+            data-price="65000" data-image="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761720082/IMG_20251024_113946_jka5ot.jpg">Add to Cart</button>
+            <button class="btn small outline" data-order-now data-id="hs-02" data-name="Over-Ear Wireless Headset" 
+            data-price="6500" data-qty="1">Order Now</button>
+          </div>
+        </article>
+
+        <article class="card product-card" data-category="headsets">
+          <img src="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761720178/IMG-20251024-WA0055_ap3ejp.jpg" alt="Wireless Headset">
+          <h3>JBL Wireless Headset</h3>
+          <p class="muted">Lightweight design, high-fidelity sound.</p>
+          <p class="price">₦11,000</p>
+          <div class="card-actions">
+            <button class="btn small" data-add-to-cart data-id="hs-03" data-name="JBL Wireless Headset" 
+            data-price="11000" data-image="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761720178/IMG-20251024-WA0055_ap3ejp.jpg">
+              Add to Cart</button>
+            <button class="btn small outline" data-order-now data-id="hs-03" data-name="JBL Wireless Headset" 
+            data-price="11000" data-qty="1">Order Now</button>
+          </div>
+        </article>
+
+         <!-- earbuds -->
+        <article class="card product-card" data-category="earbuds">
+          <img src="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761720174/IMG-20251024-WA0045_hmmwqb.jpg" alt="Wireless Earbuds">
+          <h3>JBL Wireless Bluetooth Earbuds</h3>
+          <p class="muted">High-quality sound, comfortable fit.</p>
+          <p class="price">₦10,500</p>
+          <div class="card-actions">
+            <button class="btn small" data-add-to-cart data-id="eb-01" data-name="Wireless Bluetooth Earbuds" 
+            data-price="10500" data-image="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761720174/IMG-20251024-WA0045_hmmwqb.jpg"> 
+              Add to Cart</button>
+            <button class="btn small outline" data-order-now data-id="eb-01" data-name="Wireless Bluetooth Earbuds" 
+            data-price="10500" data-qty="1">Order Now</button>
+          </div>
+        </article>
+
+        <article class="card product-card" data-category="earbuds">
+          <img src="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761720134/IMG_20251024_114708_nlbcb4.jpg" alt="Wireless Earbuds">
+          <h3>Apple AirPods Pro</h3>
+          <p class="muted">Active noise cancellation, superior sound quality.</p>
+          <p class="price">₦7,000</p>
+          <div class="card-actions">
+            <button class="btn small" data-add-to-cart data-id="eb-02" data-name="Apple AirPods Pro" 
+            data-price="7000" data-image="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761720134/IMG_20251024_114708_nlbcb4.jpg">Add to Cart</button>
+            <button class="btn small outline" data-order-now data-id="eb-02" data-name="Apple AirPods Pro" 
+            data-price="7000" data-qty="1">Order Now</button>
+          </div>
+        </article>
+
+        <article class="card product-card" data-category="earbuds">
+          <img src="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761720172/IMG-20251024-WA0044_hwjaed.jpg" alt="Wireless Earbuds">
+          <h3>Samsung Led Buds</h3>
+          <p class="muted">Ergonomic design, rich sound experience.</p>
+          <p class="price">₦10,000</p>
+          <div class="card-actions">
+            <button class="btn small" data-add-to-cart data-id="eb-03" data-name="Samsung Led Buds" 
+            data-price="10000" data-image="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761720172/IMG-20251024-WA0044_hwjaed.jpg">Add to Cart</button>
+            <button class="btn small outline" data-order-now data-id="eb-03" data-name="Samsung LED Buds" 
+            data-price="10000" data-qty="1">Order Now</button>
+          </div>
+        </article>
+
+        <article class="card product-card" data-category="earbuds">
+          <img src="images\IMG_20251024_131937.jpg" alt="Wireless Earbuds">
+          <h3>M10</h3>
+          <p class="muted">Industry-leading noise cancellation, premium sound.</p>
+          <p class="price">₦8,000</p>
+          <div class="card-actions">
+            <button class="btn small" data-add-to-cart data-id="eb-04" data-name="M10" 
+            data-price="8000" data-image="images\IMG_20251024_131937.jpg">Add to Cart</button>
+            <button class="btn small outline" data-order-now data-id="eb-04" data-name="M10"  
+            data-price="8000" data-qty="1">Order Now</button>
+          </div>
+        </article>
+
+        <!-- Portable Speaker -->
+        <article class="card product-card" data-category="speakers">
+          <img src="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761720181/IMG-20251024-WA0062_zpmryz.jpg" alt="Portable Speaker">
+          <h3>Portable Wireless Speaker</h3>
+          <p class="muted">Powerful sound, long battery life.</p>
+          <p class="price">₦15,500</p>
+          <div class="card-actions">
+            <button class="btn small" data-add-to-cart data-id="sp-01" data-name="Portable Wireless Speaker" 
+            data-price="15500" data-image="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761720181/IMG-20251024-WA0062_zpmryz.jpg">Add to Cart</button>
+            <button class="btn small outline" data-order-now data-id="sp-01" data-name="Portable Bluetooth Speaker" 
+            data-price="15500" data-qty="1">Order Now</button>
+          </div>
+        </article>
+
+          <article class="card product-card" data-category="speakers">
+          <img src="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761720185/IMG-20251024-WA0076_cjqfxj.jpg" alt="Portable Speaker">
+          <h3>Portable Wireless Speaker HF-F96</h3>
+          <p class="muted">Small & Powerful sound,With long battery life.</p>
+          <p class="price">₦7,500</p>
+          <div class="card-actions">
+            <button class="btn small" data-add-to-cart data-id="sp-01" data-name="Portable Bluetooth Speaker" 
+            data-price="7500" data-image="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761720185/IMG-20251024-WA0076_cjqfxj.jpg">Add to Cart</button>
+            <button class="btn small outline" data-order-now data-id="sp-01" data-name="Portable Wireless Speaker" 
+            data-price="7500" data-qty="1">Order Now</button>
+          </div>
+        </article>
+
+        <!-- Ring Light -->
+        <article class="card product-card" data-category="ringlights">
+          <img src="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761720188/ring-light-7005443_1280_ipww2c.jpg"
+           alt="Ring Light">
+          <h3>Adjustable Ring Light</h3>
+          <p class="inches"> 10 inches</p>
+          <p class="muted">For selfies & streaming, adjustable brightness.</p>
+          <p class="price">₦15,000</p>
+          <div class="card-actions">
+            <button class="btn small" data-add-to-cart data-id="rl-01" data-name="Adjustable Ring Light"
+             data-price="15000" data-image="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761720188/ring-light-7005443_1280_ipww2c.jpg">Add to Cart</button>
+            <button class="btn small outline" data-order-now data-id="rl-01" data-name="Adjustable Ring Light"
+             data-price="15000" data-qty="1">Order Now</button>
+          </div>
+        </article>
+
+        <article class="card product-card" data-category="ringlights">
+          <img src="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761720202/maria-nVPJXQBmg7I-unsplash_klr0xm.jpg" 
+          alt="Ring Light">
+          <h3>soft Ring Light</h3>
+          <p class="inches"> 12 inches</p>
+          <p class="muted">For selfies & streaming, adjustable brightness and RGB led.</p>
+          <p class="price">₦17,000</p>
+          <div class="card-actions">
+            <button class="btn small" data-add-to-cart data-id="rl-01" 
+            data-name="Soft Ring Light" data-price="17000" 
+            data-image="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761720202/maria-nVPJXQBmg7I-unsplash_klr0xm.jpg">
+            Add to Cart</button>
+            <button class="btn small outline" data-order-now data-id="rl-01" 
+            data-name="Soft Ring Light" data-price="17000" data-qty="1">
+            Order Now</button>
+          </div>
+        </article>
+
+        <!-- tripod lights -->
+        <article class="card product-card" data-category="tripods">
+          <img src="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761720110/IMG_20251024_114506_wogfpx.jpg" 
+          alt="Tripod Light">
+          <h3>Tripod LED Light</h3>
+          <p class="muted">Adjustable tripod with LED light for photography.</p>
+          <p class="price">₦16,000</p>
+          <div class="card-actions">
+            <button class="btn small" data-add-to-cart data-id="tl-01" 
+            data-name="Tripod LED Light" data-price="16000" 
+            data-image="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761720110/IMG_20251024_114506_wogfpx.jpg">
+            Add to Cart</button>
+            <button class="btn small outline" data-order-now data-id="tl-01" 
+            data-name="Tripod LED Light" data-price="16000" data-qty="1">
+            Order Now</button>
+          </div>
+        </article>
+
+        <article class="card product-card" data-category="tripods">
+          <img src="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761720060/field-5065171_1280_phusm8.jpg" 
+          alt="Tripod Light">
+          <h3>Tripod</h3>
+          <p class="muted">Lightweight tripod with LED light for on-the-go use.</p>
+          <p class="price">₦20,000</p>
+          <div class="card-actions">
+            <button class="btn small" data-add-to-cart data-id="tl-02" 
+            data-name=" Tripod" data-price="20000" 
+            data-image="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761720060/field-5065171_1280_phusm8.jpg">
+            Add to Cart</button>
+            <button class="btn small outline" data-order-now data-id="tl-02" 
+            data-name="Tripod" data-price="20000" data-qty="1">
+            Order Now</button>
+          </div>
+        </article>
+
+        <article class="card product-card" data-category="tripods">
+          <img src="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761720184/IMG-20251024-WA0075_onemhs.jpg" 
+          alt="Phone Stands">
+          <h3>Adjustable Phone Stands</h3>
+          <p class="muted">Adjustable Phone Stands for all devices.</p>
+          <p class="price">₦6,000</p>
+          <div class="card-actions">
+            <button class="btn small" data-add-to-cart data-id="tl-03" 
+            data-name="Adjustable Phone Stands" data-price="6000" 
+            data-image="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761720184/IMG-20251024-WA0075_onemhs.jpg">
+            Add to Cart</button>
+            <button class="btn small outline" data-order-now data-id="tl-03" 
+            data-name="Adjustable Phone Stands " data-price="6000" data-qty="1">
+            Order Now</button>
+          </div>
+        </article>
+
+
+        <!-- LED Strip -->
+        <article class="card product-card" data-category="leds">
+          <img src="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761720181/IMG-20251024-WA0063_yzwx5p.jpg" 
+          alt="LED Light">
+          <h3>Flexible LED Strip</h3>
+          <p class="muted">Decorative LED strip with remote control.</p>
+          <p class="price">₦5,000</p>
+          <div class="card-actions">
+            <button class="btn small" data-add-to-cart data-id="led-01" 
+            data-name="Flexible LED Strip" data-price="5000" 
+            data-image="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761720181/IMG-20251024-WA0063_yzwx5p.jpg">
+            Add to Cart</button>
+            <button class="btn small outline" data-order-now data-id="led-01" 
+            data-name="Flexible LED Strip" data-price="5000" data-qty="1">
+            Order Now</button>
+          </div>
+        </article>
+
+        <article class="card product-card" data-category="leds">
+          <img src="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761720184/IMG-20251024-WA0071_x6uxx0.jpg" 
+          alt="LED Light">
+          <h3>VL-68RGB Portable LED video Fill Light</h3>
+          <p class="muted">compact RGB fill light, adjustable color & brightness.</p>
+          <p class="price">₦16,000</p>
+          <div class="card-actions">
+            <button class="btn small" data-add-to-cart data-id="led-01" 
+            data-name="VL-68RGB Portable LED video Fill Light" data-price="16000" 
+            data-image="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761720184/IMG-20251024-WA0071_x6uxx0.jpg">
+            Add to Cart</button>
+            <button class="btn small outline" data-order-now data-id="led-01" 
+            data-name="VL-68RGB Portable LED video Fill Light" data-price="16000" data-qty="1">
+            Order Now</button>
+          </div>
+        </article>
+
+        <!-- Mini Phone -->
+        <article class="card product-card" data-category="miniphones">
+          <img src="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761744608/IMG_20251024_115000_efm7re.jpg" alt="Mini Phone">
+          <h3>Tecno T454</h3>
+          <p class="muted">Compact and reliable with dual SIM support and long battery life.</p>
+          <p class="price">₦15,000</p>
+          <div class="card-actions">
+            <button class="btn small" data-add-to-cart data-id="mp-01" data-name="Tecno T454 
+            data-price="15000" data-image="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761744608/IMG_20251024_115000_efm7re.jpg">Add to Cart</button>
+            <button class="btn small outline" data-order-now data-id="mp-01" 
+            data-name="Tecno T454" data-price="15000" data-qty="1">Order Now</button>
+          </div>
+        </article>
+
+        <article class="card product-card" data-category="miniphones">
+          <img src="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761744249/IMG_20251024_114938_uponkv.jpg" alt="Mini Phone">
+          <h3>Maxfone Max 10</h3>
+          <p class="muted">Strong battery life and loud sound in a compact design.</p>
+          <p class="price">₦40,000</p>
+          <div class="card-actions">
+            <button class="btn small" data-add-to-cart data-id="mp-01" data-name="Maxfone Max 10" 
+            data-price="40000" data-image="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761744249/IMG_20251024_114938_uponkv.jpg">Add to Cart</button>
+            <button class="btn small outline" data-order-now data-id="mp-01" 
+            data-name="Maxfone Max 10" data-price="40000" data-qty="1">Order Now</button>
+          </div>
+        </article>
+
+        <article class="card product-card" data-category="miniphones">
+          <img src="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761744607/IMG_20251024_115012_jf3xuj.jpg" alt="Mini Phone">
+          <h3>Maxfone 16c</h3>
+          <p class="muted">Small,strong, and built to last with clear sound and bright touch.</p>
+          <p class="price">₦15,000</p>
+          <div class="card-actions">
+            <button class="btn small" data-add-to-cart data-id="mp-01" data-name="Maxfone 16c" 
+            data-price="15000" data-image="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761744607/IMG_20251024_115012_jf3xuj.jpg">Add to Cart</button>
+            <button class="btn small outline" data-order-now data-id="mp-01" 
+            data-name="Maxfone 16c" data-price="15000" data-qty="1">Order Now</button>
+          </div>
+        </article>
+
+        <article class="card product-card" data-category="miniphones">
+          <img src="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761744263/IMG_20251024_114951_dtsmy2.jpg" alt="Mini Phone">
+          <h3>bontel k5</h3>
+          <p class="muted">Durable mini phone with long battery life and dual SIM support.</p>
+          <p class="price">₦17,000</p>
+            <div class="card-actions">
+                <button class="btn small" data-add-to-cart data-id="mp-01" data-name="bontel k5" 
+                data-price="17000" data-image="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761744263/IMG_20251024_114951_dtsmy2.jpg">Add to Cart</button>
+                <button class="btn small outline" data-order-now data-id="mp-01" 
+                data-name="bontel k5" data-price="17000" data-qty="1">Order Now</button>
+            </div>
+        </article>
+
+        <!-- Mini Fan -->
+        <article class="card product-card" data-category="minifans">
+          <img src="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761720134/IMG_20251024_114629_oyeqgy.jpg" alt="Mini Fan">
+          <h3>Portable Mini Fan</h3>
+          <p class="muted">Rechargeable mini fan cool on the go.</p>
+          <p class="price">₦2,200</p>
+          <div class="card-actions">
+            <button class="btn small" data-add-to-cart data-id="mf-01" data-name="Portable Mini Fan" 
+            data-price="2200" data-image="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761720134/IMG_20251024_114629_oyeqgy.jpg">Add to Cart</button>
+            <button class="btn small outline" data-order-now data-id="mf-01" data-name="Portable Mini Fan" 
+            data-price="2200" data-qty="1">Order Now</button>
+          </div>
+        </article>
+
+        <article class="card product-card" data-category="minifans">
+          <img src="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761720142/IMG_20251024_114532_mxtjxb.jpg" alt="Mini Fan">
+          <h3>Rechargeable table Mini Fan</h3>
+          <p class="muted">Rechargeable table mini fan cool on the go.</p>
+          <p class="price">₦2,200</p>
+          <div class="card-actions">
+            <button class="btn small" data-add-to-cart data-id="mf-01" data-name="rechargeable table Mini Fan" 
+            data-price="2200" data-image="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761720142/IMG_20251024_114532_mxtjxb.jpg">Add to Cart</button>
+            <button class="btn small outline" data-order-now data-id="mf-01" data-name="rechargeable table Mini Fan" 
+            data-price="2200" data-qty="1">Order Now</button>
+          </div>
+        </article>
+
+        <article class="card product-card" data-category="minifans">
+          <img src="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761720185/IMG-20251024-WA0080_s9xx6r.jpg" alt="Mini Fan">
+          <h3> Desk Mini Fan</h3>
+          <p class="muted"> Desk mini fan cool on the go.</p>
+          <p class="price">₦27,500</p>
+          <div class="card-actions">
+            <button class="btn small" data-add-to-cart data-id="mf-01" data-name="USB Desk Mini Fan" 
+            data-price="27500" data-image="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761720185/IMG-20251024-WA0080_s9xx6r.jpg">Add to Cart</button>
+            <button class="btn small outline" data-order-now data-id="mf-01" data-name="USB Desk Mini Fan" 
+            data-price="27500" data-qty="1">Order Now</button>
+          </div>
+        </article>
+
+        <!-- Wallpaper -->
+        <article class="card product-card" data-category="wallpapers">
+          <img src="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761720178/IMG-20251024-WA0053_qufbs9.jpg" alt="Wallpaper">
+          <h3>Decorative Wallpaper </h3>
+          <p class="muted">Give your room a different look today.</p>
+          <p class="price">₦7,000</p>
+          <div class="card-actions">
+            <button class="btn small" data-add-to-cart data-id="wp-01" data-name=" Wallpaper Pack"
+             data-price="7000" data-image="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761720178/IMG-20251024-WA0053_qufbs9.jpg">
+             Add to Cart</button>
+            <button class="btn small outline" data-order-now data-id="wp-01" data-name="Wallpaper Pack"
+             data-price="7000" data-qty="1">Order Now</button>
+          </div>
+        </article>
+
+        <article class="card product-card" data-category="wallpapers">
+          <img src="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761720180/IMG-20251024-WA0060_am1veo.jpg" alt="Wallpaper">
+          <h3>Nature Wallpaper Pack </h3>
+          <p class="muted">Beautiful nature wallpapers for your Wall.</p>
+          <p class="price">₦9,000</p>
+          <div class="card-actions">
+            <button class="btn small" data-add-to-cart data-id="wp-02" data-name="Nature Wallpaper Pack"
+             data-price="9000" data-image="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761720180/IMG-20251024-WA0060_am1veo.jpg">
+             Add to Cart</button>
+            <button class="btn small outline" data-order-now data-id="wp-02" data-name="Nature Wallpaper Pack"
+             data-price="9000" data-qty="1">Order Now</button>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Tips -->
+  <section class="section alt">
+    <div class="container">
+      <h2>Tips & Care</h2>
+      <p class="muted">How to keep accessories working and looking new cleaning, charging tips, and storage advice. Avoid moisture on electrical accessories and always use certified cables.</p>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>Nero's Accessories</h3>
+        <p>Before Big Tree, After Oshodi, Poly, owerri, Imo State</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p><a href="https://wa.me/2348165877866" class="link">WhatsApp: 09116286847</a></p>
+      </div>
+    </div>
+    <div class="copyright">© 2025 Nero's Phone Accessories</div>
+  </footer>
+
+  <a href="https://wa.me/2348165877866" target="_blank" class="whatsapp-float">
+    <img src="https://res.cloudinary.com/dxyvq3t4c/image/upload/v1761720188/mariia-shalabaieva-4VhDqJy69vQ-unsplash_vuaisl.jpg" alt="WhatsApp">
+  </a>
+
+  <!-- Filtering & search scripts (inline so works even without external) -->
+  <script>
+    function filterCategory(){
+      const cat = document.getElementById('filterCategory').value;
+      const cards = document.querySelectorAll('.product-card');
+      cards.forEach(c=>{
+        if(cat === 'all' || c.dataset.category === cat) c.style.display = '';
+        else c.style.display = 'none';
+      });
+    }
+    function applySearch(){
+      const q = document.getElementById('searchBox').value.toLowerCase();
+      document.querySelectorAll('.product-card').forEach(card=>{
+        const title = (card.querySelector('h3')?.innerText || '').toLowerCase();
+        const desc = (card.querySelector('.muted')?.innerText || '').toLowerCase();
+        card.style.display = (title+desc).includes(q) ? '' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>
